@@ -9,14 +9,14 @@ const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT as string;
 
 type ShortPageProps = {
   short: Prisma.ShortGetPayload<{
-    include:{
-      user:{
-        select:{
-          name:true;
-          email:true;
-        }
-      }
-    }
+    include: {
+      user: {
+        select: {
+          name: true;
+          email: true;
+        };
+      };
+    };
   }>;
 };
 
@@ -34,21 +34,25 @@ const ShortsCard: React.FC<ShortPageProps> = ({ short }) => {
         />
       </ImageKitProvider>
 
-      {/* Video Title */}
-      <CardContent className="absolute bottom-14 left-4">
-        <h3 className="text-sm font-semibold line-clamp-2 text-white">
-          {short.title}
-        </h3>
-      </CardContent>
-
       {/* Channel Info */}
-      <CardFooter className="absolute bottom-4 right-4">
-        <div className="flex items-center space-x-2">
-          <Avatar>
-            <AvatarImage src="" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-          <span className="text-xs text-white">{short.user.name}</span>
+      <CardFooter className="absolute bottom-20 -left-2 text-white">
+        <div>
+          <div className="flex items-center space-x-2">
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn"/>
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col">
+              <h3 className="font-semibold ">{short.title}</h3>
+              <span className="text-xs">{short.user.name}</span>
+            </div>
+          </div>
+          <div className="text-sm mt-2">
+            <p>
+              Hello everyone! this is white background video, you can
+              download without any copyright issues.
+            </p>
+          </div>
         </div>
       </CardFooter>
     </Card>
