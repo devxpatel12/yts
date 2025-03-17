@@ -20,14 +20,14 @@ const UploadShorts = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-6 text-center">Upload Shorts</h2>
       <form action={handleSubmit}>
         {/* Title Field */}
         <div className="mb-4">
           <Label
             htmlFor="title"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium"
           >
             Title
           </Label>
@@ -35,7 +35,7 @@ const UploadShorts = () => {
             type="text"
             id="title"
             name="title"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
             placeholder="Enter title"
           />
           {formState.errors.title && (
@@ -49,14 +49,14 @@ const UploadShorts = () => {
         <div className="mb-4">
           <Label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium"
           >
             Description
           </Label>
           <Textarea
             id="description"
             name="description"
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
             rows={4}
             placeholder="Enter description"
           />

@@ -76,7 +76,7 @@ const Upload = ({ setVideoUrl }: UploadProps) => {
       <div className="mb-6">
         <label
           htmlFor="file"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-sm font-medium"
         >
           Upload Short Video
         </label>

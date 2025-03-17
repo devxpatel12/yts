@@ -12,6 +12,7 @@ import {
   SignUpButton,
   UserButton,
 } from "@clerk/nextjs";
+import { ModeToggle } from "../mode-toggle";
 
 const Navbar = () => {
   return (
@@ -24,7 +25,7 @@ const Navbar = () => {
       </div>
 
       {/* Searching Feature  */}
-      <div className="w-1/2">
+      <div className="w-1/2 hidden md:block">
         <Input type="text" placeholder="Search" />
       </div>
 
@@ -49,39 +50,9 @@ const Navbar = () => {
           <SignedIn>
             <UserButton />
           </SignedIn>
+         <ModeToggle/>
         </header>
 
-        {/* <Popover>
-          <PopoverTrigger asChild>
-            <Avatar>
-              <AvatarImage src="" />
-              <AvatarFallback>PM</AvatarFallback>
-            </Avatar>
-          </PopoverTrigger>
-          <PopoverContent className="w-80">
-            <div className="grid gap-4">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <Avatar>
-                    <AvatarImage src="" />
-                    <AvatarFallback>PM</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className="font-medium leading-none">
-                      Patel MernStack
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      devxpat@gmail.com
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-x-2">
-                <Button variant={"destructive"}>Logout</Button>
-              </div>
-            </div>
-          </PopoverContent>
-        </Popover> */}
       </div>
     </div>
   );
